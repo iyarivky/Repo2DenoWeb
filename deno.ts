@@ -11,11 +11,13 @@ function detectMIMEType(url) {
             typeData = "text/javascript"
         } else if (['png', 'jpg', 'jpeg', 'gif', 'webp'].includes(extension)) {
             typeData = `image/${extension}`
+        } else if (['mp4', 'webm'].includes(extension)) {
+            typeData = `video/${extension}`
         } else {
-            typeData = `Unknown extension: ${extension}`;
+            typeData = `Ekstensi tidak diketahui: ${extension}`;
         }
     } else {
-        console.log('URL has no extension');
+        console.log('URL tidak memiliki ekstensi');
     }
     return typeData
 }
